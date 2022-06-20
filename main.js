@@ -17,7 +17,7 @@ const gridContents = new Array(513).fill('air');;
 //URL.split("o");
 
 //selectionPanelStuff
-let selectionPanelImageOrder = 'air';
+let selectionPanelImageOrder = 4;
 var selectedImg;
 
 function preload() {
