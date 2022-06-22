@@ -10,6 +10,9 @@ const blockNames = [
 
     //block
     'air',
+    'glasst',
+    'glassw',
+    'glazedterracotta',
     'honeyblock',
     'ironblock', 
     'noteblock', 
@@ -17,8 +20,11 @@ const blockNames = [
     'rsblock', 
     'sand', 
     'scaffolding',
-    'slimeblock', 
+    'slabt',
+    'slimeblock',
+    'smoothstone',
     'soulsand',
+    'unknown',
 
     //cake
     'cake14', 
@@ -50,6 +56,10 @@ const blockNames = [
     //dust
     'dustoff',
     'duston',
+
+    //fencegate
+    'fencegatec',
+    'fencegateo',
 
     //hopper
     'hopperb',
