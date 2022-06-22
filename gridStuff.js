@@ -2,7 +2,7 @@ function gridBorders() {
     line(xGraph, 0, xGraph, graphDimy - 20);
     line(xGraph + 810, 0, xGraph + 810, graphDimy - 20);
     line(0, yGraph, graphDimy, yGraph);
-    line(0, graphGridThing - 30, graphDimy, graphGridThing - 30);
+    line(0, graphGridThing - 30, graphDimx - 2, graphGridThing - 30);
 }
 
 function gridItself() {
@@ -12,7 +12,7 @@ function gridItself() {
         line(xGraph, 0, xGraph, graphGridThing - 30.5);
         xGraph = xGraph + 30;
     }
-    while (yGraph <= graphGridThing - 30) {
+    while (yGraph <= graphGridThing - 60) {
         line(0, yGraph, graphDimy, yGraph);
         yGraph = yGraph + 30;
     }*/
