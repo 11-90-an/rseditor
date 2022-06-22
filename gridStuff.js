@@ -19,10 +19,18 @@ function gridItself() {
 }
 
 function gridContentsManage() {
-    gridContents[(roundedY * 27) + roundedX] = blockNames[selectionPanelImageOrder];
-    console.log(gridContents);
+    if (gridContents[pos] === blockNames[selectionPanelImageOrder]) {
+        gridContents[pos] = 'air';
+    }
+    else {
+        gridContents[pos] = blockNames[selectionPanelImageOrder];
+    }
+
     for (let i = 0; i < gridContents.length; i++) {
+        image(imageMap.get('air'), ((i+27)%27 *30) + 0.56, (floor(i/27) * 30) + 0.56, 30, 30);
         image(imageMap.get(gridContents[i]), ((i+27)%27 *30) + 0.56, (floor(i/27) * 30) + 0.56, 30, 30);
     }
+
+    console.log(gridContents);
     searchParamsThing.set('bloks', gridContents);
 }
