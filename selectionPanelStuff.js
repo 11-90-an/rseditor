@@ -28,5 +28,5 @@ function selectionPanelSelectionIndicator() {
 
 function selectionPanelRectangle() {
   fill(54, 57, 62);
-  rect(0.6, graphGridThing - 30, 810.6, graphDimy - graphGridThing + 10);
+  rect(0.6, graphGridThing - 30, graphDimx - xGraph - 1, graphDimy - graphGridThing + 10);
 }
