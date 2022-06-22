@@ -1,20 +1,19 @@
 //URL thingies
 let searchParamsThing = new URLSearchParams('bloks', 0);
 
+//gridStuff
+let xGraph = 0.6;
+let yGraph = 0.6;
+const gridContents = new Array(513).fill('air');;
+
 //graph constants
 let graphDimx = 812;
 let graphDimy = 841;
 let graphGridThing = graphDimy - 240;
 
 //rounded coords
-let roundedX = 0;
-let roundedY = 0;
-let pos = 0;
+let roundedX, roundedY, pos;
 
-//gridStuff
-let xGraph = 0.6;
-let yGraph = 0.6;
-const gridContents = new Array(513).fill('air');;
 //URL.split("o");
 
 //selectionPanelStuff
