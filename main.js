@@ -5,7 +5,7 @@ const urlString = urlParams.get('N');
 //gridStuff
 let xGraph = 0.6;
 let yGraph = 0.6;
-const gridContents = new Array(513);
+let gridContents = new Array(513);
 
 //graph constants
 let graphDimx = 812;
@@ -43,8 +43,7 @@ function setup() {
     gridContents.fill('air');
   }
   else {
-    gridContents.length = 0;
-    gridContents.push.apply(gridContents, urlString.split(",").length);
+    gridContents = urlString.split(",");
   }
 }
 
@@ -52,7 +51,7 @@ function draw() {
   gridBorders();
   gridItself();
   urlParams.set('N', gridContents.toString());
-  window.history.replaceState({}, '', `${location.pathname}?${urlParams}`);
+  window.history.replaceState(null, null, urlParams);
 }
 
 function clickedMouse() {
