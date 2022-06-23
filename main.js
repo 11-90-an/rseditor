@@ -15,8 +15,6 @@ let graphGridThing = graphDimy - 240;
 //rounded coords
 let roundedX, roundedY, pos;
 
-//URL.split("o");
-
 //selectionPanelStuff
 let selectionPanelImageOrder = 4;
 var selectedImg;
@@ -33,25 +31,25 @@ function setup() {
   cnv.stroke(90);
   cnv.mouseClicked(clickedMouse);
 
-  gridBorders();
-  gridItself();
-
-  selectionPanelRectangle();
-  selectionPanelImages();
-
   if (urlString === null) {
     gridContents.fill('air');
   }
   else {
     gridContents = urlString.split(",");
   }
+  gridContentsManage();
+  gridBorders();
+  gridItself();
+
+  selectionPanelRectangle();
+  selectionPanelImages();
 }
 
 function draw() {
   gridBorders();
   gridItself();
   urlParams.set('N', gridContents.toString());
-  window.history.replaceState(null, null, urlParams);
+  window.history.replaceState(null, null, `${location.pathname}?${urlParams}`);
 }
 
 function clickedMouse() {
