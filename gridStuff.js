@@ -32,5 +32,4 @@ function gridContentsManage() {
     }
 
     console.log(gridContents);
-    searchParamsThing.set('bloks', gridContents);
 }

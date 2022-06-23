@@ -1,10 +1,11 @@
 //URL thingies
-let searchParamsThing = new URLSearchParams('bloks', 0);
+const urlParams = new URLSearchParams(window.location.search);
+const urlString = urlParams.get('N');
 
 //gridStuff
 let xGraph = 0.6;
 let yGraph = 0.6;
-const gridContents = new Array(513).fill('air');;
+const gridContents = new Array(513);
 
 //graph constants
 let graphDimx = 812;
@@ -37,11 +38,21 @@ function setup() {
 
   selectionPanelRectangle();
   selectionPanelImages();
+
+  if (urlString === null) {
+    gridContents.fill('air');
+  }
+  else {
+    gridContents.length = 0;
+    gridContents.push.apply(gridContents, urlString.split(",").length);
+  }
 }
 
 function draw() {
   gridBorders();
   gridItself();
+  urlParams.set('N', gridContents.toString());
+  window.history.replaceState({}, '', `${location.pathname}?${urlParams}`);
 }
 
 function clickedMouse() {
