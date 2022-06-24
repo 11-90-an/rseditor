@@ -46,7 +46,6 @@ function setup() {
         gridContents[i] = 'air';
       }
     }
-    console.log(gridContents);
   }
 
   gridContentsManage();
@@ -70,12 +69,10 @@ function clickedMouse() {
   pos = (roundedY * 27) + roundedX;
 
   if ((mouseX > 0) && (mouseX < graphDimx - 3) && (mouseY > 0) && (mouseY < graphGridThing - 35)) {
-    console.log(roundedX + " " + roundedY);
     gridContentsManage();
     urlUpdate();
   }
   else {
-    console.log("selection panel");
     selectionPanelSelectionIndicator();
     selectionPanelImages();
   }
@@ -125,7 +122,6 @@ function gridContentsManage() {
 
   for (let i = 0; i < gridContents.length; i++) {
     image(imageMap.get('air'), ((i + 27) % 27 * 30) + 0.56, (floor(i / 27) * 30) + 0.56, 30, 30);
-    console.log(gridContents[i]);
     image(imageMap.get(gridContents[i]), ((i + 27) % 27 * 30) + 0.56, (floor(i/27) * 30) + 0.56, 30, 30);
   }
 
@@ -158,8 +154,6 @@ function selectionPanelSelectionIndicator() {
   rect((selectionPanelImageX * 40) + 6, (selectionPanelImageY * 40) + 17, 38, 38, 5);
   selectionPanelImageOrder = ((selectionPanelImageY - 14) * 20) + selectionPanelImageX;
   selectedImg = imageMap.get(blockNames[selectionPanelImageOrder]);
-  
-  console.log(selectionPanelImageOrder);
 }
 
 function selectionPanelRectangle() {
