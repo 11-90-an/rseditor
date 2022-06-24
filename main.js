@@ -42,7 +42,7 @@ function setup() {
       gridContents[gridContentsFromUrl[i]] = gridContentsFromUrl[i + 1];
     }
     for (let i = 0; i < gridContents.length; i++) {
-      if (gridContents[i] == null) {
+      if (gridContents[i] === undefined) {
         gridContents[i] = 'air';
       }
     }
