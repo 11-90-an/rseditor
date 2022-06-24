@@ -1,17 +1,18 @@
-html, body {
+html {
   width: 100%;
   height: 100%;
-  margin: 0;
+  margin: 10px;
 }
 
 body {
   display: flex;
-
-  /* This centers our sketch horizontally. */
-  justify-content: center;
-
-  /* This centers our sketch vertically. */
-  align-items: center;
-
   background-color: rgb(54, 57, 62);
+}
+
+@media only screen and (min-width: 600px) {
+  body {
+    /* centers horizontally and vertically */
+    justify-content: center; 
+    align-items: center;
+  }
 }
