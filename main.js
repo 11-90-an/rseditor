@@ -33,20 +33,7 @@ function setup() {
   cnv.stroke(90);
   cnv.mouseClicked(clickedMouse);
 
-  if (urlString === null) {
-    gridContents.fill('air');
-  }
-  else {
-    gridContentsFromUrl = urlString.split(",");
-    for (let i = 0; i < gridContentsFromUrl.length; i += 2) {
-      gridContents[gridContentsFromUrl[i]] = gridContentsFromUrl[i + 1];
-    }
-    for (let i = 0; i < gridContents.length; i++) {
-      if (gridContents[i] === undefined) {
-        gridContents[i] = 'air';
-      }
-    }
-  }
+  urlProcessing();
 
   gridContentsManage();
   gridBorders();
@@ -78,17 +65,46 @@ function clickedMouse() {
   }
 }
 
+function urlProcessing() {
+  if (urlString === null) {
+      gridContents.fill('air');
+  }
+  else {
+      let temp;
+      gridContentsFromUrl = urlString.split(",")
+      for (let i = 0; i < gridContentsFromUrl.length; i++) {
+          if (isNaN(gridContentsFromUrl[i])) {
+              temp = gridContentsFromUrl[i];
+          }
+          else {
+              gridContents[gridContentsFromUrl[i]] = temp;
+          }
+      }
+      for (let i = 0; i < gridContents.length; i++) {
+          if (gridContents[i] === undefined) {
+            gridContents[i] = 'air';
+          }
+        }
+  }
+}
+
 function urlUpdate() {
-  gridContentsCompressed.length = 0;
+  gridContentsCompressed = [];
   for (let i = 0; i < gridContents.length; i++) {
-    if (gridContents[i] !== 'air') {
-      gridContentsCompressed.push(i);
-      gridContentsCompressed.push(gridContents[i]);
-    }
+      if (gridContents[i] !== 'air') {
+          if (gridContentsCompressed.includes(gridContents[i])) {
+              gridContentsCompressed.splice(gridContentsCompressed.findIndex(u => u === gridContents[i]) + 1, 0, i);
+          }
+          else {
+              gridContentsCompressed.push(gridContents[i]);
+              gridContentsCompressed.push(i);
+          }
+      }
   }
   urlParams.set('N', gridContentsCompressed.toString());
   window.history.replaceState(null, null, `${location.pathname}?${urlParams}`);
 }
+
 
 //grid stuff
 
