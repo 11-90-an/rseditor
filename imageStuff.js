@@ -135,6 +135,9 @@ const blockNames = [
     'trapdoorl',
     'trapdoorr',
     'trapdooru',
+    
+    //based
+    'powderedsnow',
 ]
 
 //probably shouldve used a spritesheet xd
