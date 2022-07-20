@@ -114,7 +114,9 @@ const blockNames = [
     'repeaterloff', 
     'repeaterlon',
     'repeaterroff',
-    'repeaterron', 
+    'repeaterron',
+    'repeaterfoff',
+    'repeaterfon',
 
     //shulkerbox
     'shulkerboxd',
@@ -138,6 +140,12 @@ const blockNames = [
     
     //based
     'powderedsnow',
+    
+    //water
+    'water',
+    
+    //ice
+    'ice',
 ]
 
 //probably shouldve used a spritesheet xd
