@@ -43,7 +43,11 @@ const blockNames = [
     'comparatorroff', 
     'comparatorron',
 
+    //target
+    'target',
+
     //composter
+    'composter',
 
     //door
 
@@ -114,7 +118,9 @@ const blockNames = [
     'repeaterloff', 
     'repeaterlon',
     'repeaterroff',
-    'repeaterron', 
+    'repeaterron',
+    'repeaterfoff',
+    'repeaterfon',
 
     //shulkerbox
     'shulkerboxd',
@@ -133,8 +139,32 @@ const blockNames = [
     //trapdoor
     'trapdoord',
     'trapdoorl',
-    'trapdoorr',
     'trapdooru',
+    'trapdoorr',
+
+    //wooden trapdoor
+    'wtrapdoord',
+    'wtrapdoorl',
+    'wtrapdooru',
+    'wtrapdoorr',
+
+    //stair
+    'stairdl',
+    'stairul',
+    'stairur',
+    'stairdr',
+    
+    //based
+    'powderedsnow',
+    
+    //water
+    'water',
+
+    //lava
+    'lava',
+    
+    //ice
+    'ice',
 ]
 
 //probably shouldve used a spritesheet xd
