@@ -118,9 +118,7 @@ const blockNames = [
     'repeaterloff', 
     'repeaterlon',
     'repeaterroff',
-    'repeaterron',
-    'repeaterfoff',
-    'repeaterfon',
+    'repeaterron', 
 
     //shulkerbox
     'shulkerboxd',
