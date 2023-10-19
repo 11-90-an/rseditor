@@ -165,6 +165,9 @@ const blockNames = [
     
     //ice
     'ice',
+
+    //crafter
+    'crafter'
 ]
 
 //probably shouldve used a spritesheet xd
